@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dutta Sai Power Solutions</title>
+<link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" >
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Dutta Sai Power Solutions</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+     <li class="nav-item">
+        <a class="nav-link" th:href="@{/main}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/employeeService}">Employee Service</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" th:href="@{/main}">Branch Service</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" th:href="@{/main}">DG Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/main}">Payment Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center"> Create New Employee</h1>
+				<div class="card-body">
+					<form th:action="@{/addEmployee}" th:object="${employee}" method="POST">
+						<div class="form-group">
+							<label> First Name</label>
+							<input
+							type="text"
+							name="empFirstName"
+							th:field="*{empFirstName}"
+							class="form-control"
+							placeholder="Enter Employee First Name"
+							/>
+						</div>
+						<div class="form-group">
+							<label> Last Name</label>
+							<input
+							type="text"
+							name="empLastName"
+							th:field="*{empLastName}"
+							class="form-control"
+							placeholder="Enter Employee Last Name"
+							/>
+						</div>
+						<div class="form-group">
+							<label> DOB</label>
+							<input
+							type="date"
+							name="dob"
+							th:field="*{dob}"
+							class="form-control"
+							placeholder="Enter Employee DOB"
+							/>
+						</div>
+						<div class="form-group">
+							<label> Joining Date</label>
+							<input
+							type="date"
+							name="joining_date"
+							th:field="*{joining_date}"
+							class="form-control"
+							placeholder="Enter Date Of Join"
+							/>
+						</div>
+						<div class="form-group">
+							<label> Mobile</label>
+							<input
+							type="text"
+							name="empMobile"
+							th:field="*{empMobile}"
+							class="form-control"
+							placeholder="Enter Employee Mobile"
+							/>
+						</div>
+						<div class="form-group">
+							<label> Email</label>
+							<input
+							type="text"
+							name="empEmail"
+							th:field="*{empEmail}"
+							class="form-control"
+							placeholder="Enter Employee Email"
+							/>
+						</div>
+						<div class="form-group">
+							<label> Designation</label>
+							<input
+							type="text"
+							name="designation"
+							th:field="*{designation}"
+							class="form-control"
+							placeholder="Enter Designation"
+							/>
+						</div>
+						<div class="form-group">
+							<label>Address</label>
+							<input
+							type="text"
+							name="empAddress"
+							th:field="*{empAddress}"
+							class="form-control"
+							placeholder="Enter Employee Address"
+							/>
+						</div>
+						<div class="form-group">
+							<label>Salary</label>
+							<input
+							type="text"
+							name="salary"
+							th:field="*{salary}"
+							class="form-control"
+							placeholder="Enter Employee Salary"
+							/>
+						</div>
+						<div class="form-group">
+							<label>Bank Name</label>
+							<input
+							type="text"
+							name="bankName"
+							th:field="*{bankName}"
+							class="form-control"
+							placeholder="Enter Employee Bank Name"
+							/>
+						</div>
+						<div class="form-group">
+							<label>Account Number</label>
+							<input
+							type="text"
+							name="accountNumber"
+							th:field="*{accountNumber}"
+							class="form-control"
+							placeholder="Enter Employee Account Number"
+							/>
+						</div>
+						<div class="form-group">
+							<label>IFSC Code</label>
+							<input
+							type="text"
+							name="ifscCode"
+							th:field="*{ifscCode}"
+							class="form-control"
+							placeholder="Enter Employee Bank IFSC"
+							/>
+						</div>
+						<div class="form-group">
+							<label>Bank Branch</label>
+							<input
+							type="text"
+							name="branch"
+							th:field="*{branch}"
+							class="form-control"
+							placeholder="Enter Employee Bank Branch"
+							/>
+						</div>
+						<div class="box-footer">
+							<button type="submit" class="btn btn-success">
+							Submit
+							</button>
+							<a th:href= "@{employeeService}" class="btn btn-secondary">Cancel</a>
+
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+ <div class="card-footer bg-transparent border-success text-center text-muted">&copy; Dutta Sai Power Solutions 2023</div>
+</body>
+</html>

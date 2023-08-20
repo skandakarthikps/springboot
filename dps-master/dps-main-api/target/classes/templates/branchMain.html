@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dutta Sai Power Solutions</title>
+<link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" >
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Dutta Sai Power Solutions</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+     <li class="nav-item">
+        <a class="nav-link" th:href="@{/main}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/employeeService}">Employee Service</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" th:href="@{/branchService}">Branch Service</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" th:href="@{/main}">DG Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/main}">Payment Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+	<div class="container">
+		<div class="row">
+			<h1> Welcome to Branch Service </h1>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
+				<a th:href= "@{addBranch}" style="font-family: sans-serif;color: green;">Add New Branch</a>
+			</div>
+			<div class="col-lg-3">
+				<a th:href= "@{allBranches}" style="font-family: serif;color: green;">All Branches</a>
+			</div>
+		</div>
+		<br>
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>  DP CODE </th>
+					<th>  Branch </th>
+					<th>  Location </th>
+					<th>  DG Make </th>
+					<th> KVA </th>	
+					<th> STATUS </th>
+					<th> Start Date </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each= "branchDetails: ${branches}">
+					<td th:text="${branchDetails.dpcode}"></td>
+					<td th:text="${branchDetails.branch_name}"></td>
+					<td th:text="${branchDetails.location}"></td>
+					<td th:text="${branchDetails.dgMake}"></td>
+					<td th:text="${branchDetails.dgKVA}"></td>
+					<td th:text="${branchDetails.status}"></td>
+					<td th:text="${branchDetails.branchStartDate}"></td>				
+					<td>
+					<a th:href="@{/branch/edit/{id}(id=${branchDetails.dpcode})}"
+						style="font-family: sans-serif;color: olive;" >Update Branch</a>
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	<div class="box-footer">
+<a th:href= "@{/main}" style="font-family: sans-serif;color: gray;">Back</a>
+
+</div>
+</div>
+ <div class="card-footer bg-transparent border-success text-center text-muted">&copy; Dutta Sai Power Solutions 2023</div>
+</body>
+</html>

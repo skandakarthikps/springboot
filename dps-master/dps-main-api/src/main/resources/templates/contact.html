@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dutta Sai Power Solutions</title>
+<link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" >
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Dutta Sai Power Solutions</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" th:href="@{/main}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">Employee Service</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">Branch Service</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">DG Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">Payment Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+	<div class="container">
+		<div class="row">
+			<h1> Contact Dutta sai power solutions </h1>
+		</div>
+		<div class="container">
+		<br>
+			<p class="center large"> 
+			No 21 1st cross Golden Greens Layout<br>
+			Thurahalli Uttarahalli<br>
+			Subramanyapura Post, Bengaluru, <br>
+			Karnataka 560061<br>
+			Phone: +91 9900215194<br>
+			GSTIN: 29ACYPR6848H1ZG<br>
+			</p>
+		</div>
+	<div class="box-footer">
+<a th:href= "@{/main}"  class="btn btn-secondary">Back</a>
+
+</div>
+</div>
+
+ <div class="card-footer bg-transparent border-success text-center text-muted">&copy; Dutta Sai Power Solutions 2023</div>
+
+</html>
